@@ -10,7 +10,7 @@ The core function here is `poly_approx`. It solves the least-squares problem via
 
 Here we approximate the function $\sin(x)$ on the interval $[0, \pi/2]$ over 1000 evenly-spaced sample points with a degree-seven polynomial.  The RMS error is `1.21e-8`.  We can plot the approximation error along the function domain:
 
-![sinapp.pdf](https://github.com/rokasveitas/LinearAlgebra2023/plots/sinapp.pdf)
+![sinapp.png](https://github.com/rokasveitas/LinearAlgebra2023/plots/sinapp.png)
 
 The dominant component of this error is that of a ninth-order polynomial, as we would expect for the antisymmetric $\sin(x)$ when we stop at seven.
 
@@ -18,7 +18,7 @@ The dominant component of this error is that of a ninth-order polynomial, as we 
 
 Now we'd like to look at how much error we can get rid of by going to higher polynomial degree.  We can carry out this same procedure at every integer order under 20 and plot the resulting errors:
 
-![sinapperrs.pdf](https://github.com/rokasveitas/LinearAlgebra2023/plots/sinapperrs.pdf)
+![sinapperrs.png](https://github.com/rokasveitas/LinearAlgebra2023/plots/sinapperrs.png)
 
 The error floor is on the order of `eps(Float64)`, which is `2.220446049250313e-16`.
 
@@ -26,7 +26,7 @@ The error floor is on the order of `eps(Float64)`, which is `2.220446049250313e-
 
 Because $\sin(x)$ is an antisymmetric function, we really didn't need to be using all of the even-degree monomials.  We can plot the errors for solely antisymmetric approximations at the same time as the previous data:
 
-![sinapperrsanti.pdf](https://github.com/rokasveitas/LinearAlgebra2023/plots/sinapperrsanti.pdf)
+![sinapperrsanti.png](https://github.com/rokasveitas/LinearAlgebra2023/plots/sinapperrsanti.png)
 
 We can see that there is some real information being lost by only using antisymmetric polynomials, and perhaps we could quantify that with an information criterion, but the error is still quite low and we reach the same floor eventually.
 
