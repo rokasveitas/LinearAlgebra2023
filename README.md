@@ -10,7 +10,8 @@ The core function here is `poly_approx`. It solves the least-squares problem via
 
 Here we approximate the function $\sin(x)$ on the interval $[0, \pi/2]$ over 1000 evenly-spaced sample points with a degree-seven polynomial.  The RMS error is `1.21e-8`.  We can plot the approximation error along the function domain:
 
-![sinapp.png](https://github.com/rokasveitas/LinearAlgebra2023/plots/sinapp.png)
+![sinapp](https://user-images.githubusercontent.com/5233686/214921068-3900e5b3-2456-40e7-8718-75e347621d89.png)
+
 
 The dominant component of this error is that of a ninth-order polynomial, as we would expect for the antisymmetric $\sin(x)$ when we stop at seven.
 
@@ -18,7 +19,8 @@ The dominant component of this error is that of a ninth-order polynomial, as we 
 
 Now we'd like to look at how much error we can get rid of by going to higher polynomial degree.  We can carry out this same procedure at every integer order under 20 and plot the resulting errors:
 
-![sinapperrs.png](https://github.com/rokasveitas/LinearAlgebra2023/plots/sinapperrs.png)
+![sinapperrs](https://user-images.githubusercontent.com/5233686/214921091-dbe12cf1-c354-44e1-97a8-4d97d59795e3.png)
+
 
 The error floor is on the order of `eps(Float64)`, which is `2.220446049250313e-16`.
 
@@ -26,7 +28,7 @@ The error floor is on the order of `eps(Float64)`, which is `2.220446049250313e-
 
 Because $\sin(x)$ is an antisymmetric function, we really didn't need to be using all of the even-degree monomials.  We can plot the errors for solely antisymmetric approximations at the same time as the previous data:
 
-![sinapperrsanti.png](https://github.com/rokasveitas/LinearAlgebra2023/plots/sinapperrsanti.png)
+![sinapperrsanti](https://user-images.githubusercontent.com/5233686/214921123-78a89c07-048c-4ed2-a1d8-35f47a741d34.png)
 
 We can see that there is some real information being lost by only using antisymmetric polynomials, and perhaps we could quantify that with an information criterion, but the error is still quite low and we reach the same floor eventually.
 
