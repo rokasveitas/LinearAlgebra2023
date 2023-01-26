@@ -66,7 +66,7 @@ let # to establish local scope so variables don't be annoying
 # Problem 3: Antisymmetric polynomials
 
 	anti_max_app_errs = 1:2:20
-	antisym_app_errs = [poly_approx(xs, sin, 0:max_app_err)[3] for max_app_err in anti_max_app_errs]
+	antisym_app_errs = [poly_approx(xs, sin, 1:2:max_app_err)[3] for max_app_err in anti_max_app_errs]
 
 	scatter(max_app_errs, app_errs; yaxis=:log, label="All degs.", xaxis="Polynomial deg.", title=L"$\sin(x)$ approximation error")
 	scatter!(anti_max_app_errs, antisym_app_errs; label="Antisym.")
