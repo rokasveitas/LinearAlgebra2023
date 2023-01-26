@@ -90,7 +90,7 @@ let # to establish local scope so variables don't be annoying
 	sin_cos_err = sqrt(mean((g_coefs .- f′_coefs) .^ 2)) 
 
 	@show f_err       # = 2.309736279836864e-16
-	@show g_err		  # = 3.3214652486332893e-16
+	@show g_err       # = 3.3214652486332893e-16
 	@show sin_cos_err # = 1.6752669448773883e-8
 
 end
