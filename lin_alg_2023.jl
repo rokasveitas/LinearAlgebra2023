@@ -4,7 +4,7 @@ using Serialization
 using Statistics
 using LaTeXStrings
 
-let
+let # to establish local scope so variables don't be annoying
 
 # Function definitions
 
@@ -35,7 +35,7 @@ let
 	poly_approx(xs, f::Function, ns) = poly_approx(xs, f.(xs), ns)
 
 
-	# Problem 1: Approximating our first function, sin(x)
+# Problem 1: Approximating our first function, sin(x)
 
 	xs = LinRange(0, pi/2, 1_000)
 
